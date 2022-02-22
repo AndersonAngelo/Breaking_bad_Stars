@@ -18,7 +18,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-image: linear-gradient(0, #08190E 95%, #468C5F);
+    background-image: linear-gradient(0, #08190E 95%, #468C5F 100%);
     font-family: 'Source Serif 4', sans-serif;
     font-size: 1.5rem;
     font-weight: 300;

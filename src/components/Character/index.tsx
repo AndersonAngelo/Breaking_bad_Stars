@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
 import api from "../../services/api";
 
-import { CharacterStyle, FumacaStyle } from "./style";
-
-import fumaca from '../../assets/fumaca.png';
+import { CharacterStyle } from "./style";
 
 interface Character {
   img: string;
@@ -33,8 +31,7 @@ export function Character() {
 
   return (
     <CharacterStyle>
-      {character &&
-        character.map(character => (
+      {character.map(character => (
           <div className='character' key={character.char_id}>
             <h2>{character.name}</h2>
             <img src={character.img} alt={character.name} />
