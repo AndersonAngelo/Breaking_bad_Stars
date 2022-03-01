@@ -1,37 +1,19 @@
-import { useEffect, useState } from "react";
-import api from "../../services/api";
-
+import { useContext } from "react";
 import { CharacterStyle } from "./style";
+import {SearchContext} from '../../contexts/Context'
 
 interface Character {
-  img: string;
-  name: string;
   char_id: number;
+  name: string;
+  img: string;
 }
 
-
 export function Character() {
-
-  const [character, setCharacter] = useState<Character[]>([]);
-
-  useEffect(() => {
-    async function character() {
-      try {
-        const response = await api.get('/characters')
-
-        setCharacter(response.data)
-      } catch (e) {
-        console.log(e)
-      }
-    }
-    character()
-  }, [])
-
-  console.log(character)
-
+ const {character} = useContext(SearchContext)
+ console.log(character)
   return (
     <CharacterStyle>
-      {character.map(character => (
+      {character?.map((character : Character) => (
           <div className='character' key={character.char_id}>
             <h2>{character.name}</h2>
             <img src={character.img} alt={character.name} />
@@ -39,4 +21,4 @@ export function Character() {
         ))}
     </CharacterStyle>
   )
-}
+ }

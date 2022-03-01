@@ -1,37 +1,22 @@
-import { FormContent, HeaderStyle } from "./style";
-import { FormEvent, useState } from "react";
-import axios from "axios";
-
+import { FormContent, HeaderStyle } from './style';
+import { useContext } from 'react';
 import logo from '../../assets/logo.png'
+import { SearchContext } from '../../contexts/Context';
+
 
 export function Header() {
-  const [searchCharacter, setSearchCharacter] = useState([])
 
-  function handleSetCharacter(event: FormEvent) {
-    event.preventDefault();
-    //Desestruturação do value da textArea
-    const {value} = ((event.target as HTMLTextAreaElement ))
+  const {handleSearch} = useContext(SearchContext)
 
-    if(!value) {
-      setSearchCharacter([])
-      return;
-    };
-
-    const url = `https://www.breakingbadapi.com/api/characters?name=${value}`;
-
-    axios(url).then(response => setSearchCharacter(response.data))
-
-  }
-  console.log('Data', searchCharacter)
   return (
     <HeaderStyle>
       <img src={logo} alt="Breaking bad logo" />
-      <FormContent onSubmit={handleSetCharacter}>
-        <input 
-          type="search" 
+      <FormContent>
+        <input
+          type="search"
           placeholder="Pesquisar"
           id="search"
-          onChange={handleSetCharacter}
+          onChange={(e) => handleSearch(e)}
         />
       </FormContent>
     </HeaderStyle>
