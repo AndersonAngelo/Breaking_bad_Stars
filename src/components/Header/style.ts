@@ -28,6 +28,10 @@ export const FormContent = styled.form`
       border-bottom: solid 3px #000;
     }
   }
+  input::placeholder {
+    opacity: 0.1;
+    color: #000;
+  }
   input[type="search"]::-webkit-search-decoration,
   input[type="search"]::-webkit-search-cancel-button,
   input[type="search"]::-webkit-search-results-button,
