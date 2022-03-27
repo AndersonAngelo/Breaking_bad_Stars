@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-export const Container = styled.body`
-`;
 
 export const CharacterStyle = styled.div`
   margin: 6rem 6rem 6rem 7.5rem;

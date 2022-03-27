@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -17,7 +17,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-image: linear-gradient(0, #08190E 95%, #468C5F 100%);
+    background-image: linear-gradient( 0, #08190E 10%, #468C5F 90%);
+    background-attachment: fixed;
     font-family: 'Source Serif 4', sans-serif;
     font-size: 1.5rem;
     font-weight: 300;
@@ -39,6 +40,7 @@ export const GlobalStyle = createGlobalStyle`
     border-radius: 3px;       
     border: .5px solid #08190E; 
   }
+
 
 
   .ReactModal__Overlay {
@@ -93,5 +95,9 @@ export const GlobalStyle = createGlobalStyle`
       }
     }
   }
+`;
 
+export const ContainerWrapper = styled.div`
+  min-height: 50rem;
+  position: relative;
 `;

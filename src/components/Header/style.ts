@@ -6,10 +6,18 @@ export const HeaderStyle = styled.div`
   img {
     width: 20rem;
   }
+  
+  .starLogo {
+    position: absolute;
+    top: 4rem;
+    left: 9.5rem;
+    img {
+      width: 2rem;
+    }
+  }
 `;
 
 export const FormContent = styled.form`
-  display: flex;
   input {
     font-family: 'Source Serif 4', sans-serif;
     font-size: 2rem;

@@ -12,6 +12,7 @@ export function SearchProvider({ children }: SearchProviderProps) {
   const [character, setCharacter] = useState([]);
 
   async function getCharacters() {
+   
     try {
       const response = await api.get('/characters')
 
