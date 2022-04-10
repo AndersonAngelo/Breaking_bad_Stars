@@ -3,9 +3,8 @@ import Modal from 'react-modal'
 import { SearchContext } from '../../contexts/Context'
 import { CharacterStyle } from './style';
 import CloseImg from '../../assets/close.svg'
-import { Footer } from '../Footer';
 
-interface Character {
+type Character = {
   char_id: number;
   name: string;
   img: string;
@@ -42,7 +41,6 @@ export function Character() {
           </div>
         ))}
       </CharacterStyle>
-      
       <Modal
         isOpen={openCharacterModal}
         onRequestClose={handleCloseCharacterModal}

@@ -5,7 +5,6 @@ import { SearchProvider } from './contexts/Context.jsx';
 import { Footer } from './components/Footer';
 
 export function App() {
-  
   return (
     <SearchProvider>
       <ContainerWrapper>

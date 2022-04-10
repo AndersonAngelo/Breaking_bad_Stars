@@ -1,13 +1,38 @@
 import { FooterStyle } from "./styles";
+
 import instaImg from "../../assets/instagram.png";
 import facebookImg from "../../assets/facebook.png";
 import linkedinImg from "../../assets/linkedin.png";
 import githubImg from "../../assets/github.png";
+import setaParaCimaImg from "../../assets/seta-para-cima.png";
+
 
 export function Footer() {
+
+  function handleBackToStart() {
+    
+    let btn: any = document.querySelector("#back-to-top");
+  
+    btn.addEventListener("click", function () {
+      window.scroll(0, 0);
+      window.animate()
+
+    });
+
+  }
+
+
   return (
     <FooterStyle>
-      <a className="start" href="/" target="_self" rel="início">Início</a>
+      <button
+        id="back-to-top"
+        className='back-to-top'
+        onClick={handleBackToStart}>
+        <img
+          src={setaParaCimaImg}
+          alt="Voltar ao topo"
+        />
+      </button>
       <a className="defaultIcons instagram" href="https://www.instagram.com/anderson.angello/" target="_blank">
         <img src={instaImg} alt="Ìcone instagram" />
       </a>
@@ -30,7 +55,7 @@ export function Footer() {
         </a>
       </div>
       <p className="copyright">
-      ©Breaking Bad Stars
+        ©Breaking Bad Stars
       </p>
     </FooterStyle>
   )

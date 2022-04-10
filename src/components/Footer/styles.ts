@@ -8,29 +8,30 @@ export const FooterStyle = styled.div`
   bottom: -15rem;
   left: 0;
 
-  .start {
-    position: absolute;
-    text-decoration: none;
-    color: #fff;
-    width: 5rem;
-    height: 2rem;
-    top: 1rem;
-    left: 47.3%;
-    transition: filter 0.2s ease-out;
-
-    &:hover {
-      filter: brightness(0.6);
-    }
-  }
-
   .defaultIcons {
     position: absolute;
     top: 1rem;
     img {
       transition: transform 0.2s ease-out;
-      width: 2.5rem;
+      width: 2rem;
       &:hover {
         transform: scale(1.05)
+      }
+    }
+  }
+
+  .back-to-top {
+    img {
+      position: fixed;
+      text-decoration: none;
+      color: #fff;
+      width: 2.5rem;
+      bottom: 1rem;
+      right: 1.5rem;
+      transition: filter 0.2s ease-out;
+
+      &:hover {
+        filter: brightness(0.6);
       }
     }
   }
